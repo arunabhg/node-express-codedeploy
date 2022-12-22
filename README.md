@@ -1,4 +1,4 @@
-# Node.js Express TypeScript app CodeDeploy to AWS EC2 from GitHub Actions using CI/CD pipeline - starter template
+# Node.js Express app CodeDeploy to AWS EC2 from GitHub Actions using CI/CD pipeline - starter template
 
 ---
 
@@ -10,7 +10,7 @@
 zip -r project.zip . -x node_modules* dist* .git* && aws s3 cp project.zip s3://typescript-express-artifact-2/code-deploy-3/project.zip
 
 aws deploy create-deployment
---application-name "node-express-ts-app"
+--application-name "node-express-app"
 --deployment-config-name CodeDeployDefault.OneAtATime
 --deployment-group-name ec2-app
 --description "My demo deployment"
