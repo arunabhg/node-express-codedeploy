@@ -12,5 +12,6 @@ app.get("/work", (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
+	// eslint-disable-next-line no-console
 	console.log(`Server listening on port: ${port}`);
 });
