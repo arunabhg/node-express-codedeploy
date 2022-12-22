@@ -1,4 +1,4 @@
-# Node.js Express TypeScript app CodeDeploy to AWS EC2 from<br /> GitHub Actions using CI/CD pipeline - starter template
+# Node.js Express TypeScript app CodeDeploy to AWS EC2 from GitHub Actions using CI/CD pipeline - starter template
 
 ---
 
