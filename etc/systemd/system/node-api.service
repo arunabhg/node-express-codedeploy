@@ -1,12 +1,12 @@
 [Unit]
-Description=Nodejs hello world App
+Description=Nodejs Hello world App
 Documentation=https://example.com
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-ExecStart=/usr/bin/node /home/ubuntu/Code/node-express-codedeploy1/dist/index.js
+ExecStart=/usr/bin/node /home/ubuntu/Code/node-express-codedeploy1/node-express-ts-app/dist/index.js
 Restart=on-failure
 
 [Install]
