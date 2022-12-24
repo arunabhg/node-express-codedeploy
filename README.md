@@ -13,7 +13,7 @@
 6.  Open a command prompt (Administrator) and configure AWS CLI for the IAM user. (give command - `aws configure` in the command prompt and enter _access key_, _secret key_ and _region_ for the IAM user using the AWS console).<br />
     To install AWS CLI - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html<br /><br />
 7.  If on **Windows**, use a tool like WinRar or 7Zip to create a project.zip file containing all the project folders except the _node_modules_, _dist_ and _.github_. On **MacOS** or **Linux**, use the command line to create a zip of the project file - `zip -r project.zip . -x node_modules* dist* .git*` <br />
-    _**Note -**_ Remember to not include the parent folder while creating the archive.<br /><br />
+    _**Note -**_ Remember to NOT include the parent folder while creating the archive.<br /><br />
 8.  Upload the zip file to S3 using the command - `aws s3 cp project.zip s3://<S3_bucket_name>/<folder_name>/project.zip`. <br />
     _**Note -**_ Remember to change the S3 bucket name and the underlying folder with the name and folder you have created the S3 bucket. For eg., `aws s3 cp project.zip s3://node-express-typescript-artifact/code-deploy-1/project.zip`.<br /><br />
 9.  Create the EC2 instance and choose key pair and security group.<br /><br />
@@ -50,7 +50,13 @@
     17.5 View the service journal - `sudo journalctl -fu node-api.service`<br />
     After you give all the above commands you will see that your app is running on server and you don't have to start it every time.
 
-## In the server - When you make any changes in code on local, run the following command to upload, build and propagate the changes on the server
+## When you make any changes in code on local, run the following commands to upload, build and propagate the changes on the server
+
+## In the local terminal -
+
+Follow Steps 7 & 8 to create & upload a new zip to S3 bucket.
+
+## In the server -
 
 `aws s3 cp s3://node-express-typescript-artifact/code-deploy-1/project.zip project.zip unzip -o project.zip -d Code/node-express-codedeploy1/ npm install --prefix Code/node-express-codedeploy1/ npm run build --prefix Code/node-express-codedeploy1/ sudo systemctl restart node-api.service`
 
