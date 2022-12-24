@@ -1,7 +1,5 @@
 # Node.js Express app deploy to AWS EC2 using S3 artifact - starter template
 
----
-
 ### Steps
 
 1.  Create a new repo or clone this repo.
@@ -54,14 +52,8 @@
 
 ## In the server - When you make any changes in code on local, run the following command to upload, build and propagate the changes on the server
 
----
-
 `aws s3 cp s3://node-express-typescript-artifact/code-deploy-1/project.zip project.zip unzip -o project.zip -d Code/node-express-codedeploy1/ npm install --prefix Code/node-express-codedeploy1/ npm run build --prefix Code/node-express-codedeploy1/ sudo systemctl restart node-api.service`
 
 ---
 
 **_Note -_** This template doesn't use CI/CD to deploy code to EC2. We have to run a command manually using Putty or any other SSH client, each time we make some changes, to push those changes to the server.
-
-```
-
-```
